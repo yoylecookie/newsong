@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>New Song</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+       background-color:white; 
+       text-align:center;
+    }
+
+    .songlist {
+        border-radius:30px;
+    overflow:hidden;
+    border:solid #5392e0 2px;
+    }
+
+    .songlist > button {
+       width:100%;
+       background-color:white;
+       font-family: "Outfit", sans-serif;
+       color:black;
+       border:solid #5392e0 2px;
+       padding:10px;
+    }
+
+    .songlist > button:hover {
+       background-color:#e5f9ff;
+    }
+
+    .songlist > button.active {
+       background-color:#add2ff;
+    }
+
+    p {
+       color:black;
+       font-family: "Outfit", sans-serif;
+    }
+
+    h4 {
+       color:black;
+       font-family: "Outfit", sans-serif;
+    }
+
+    .control {
+       margin-top:30px;
+       border-radius:25px;
+       border:solid #94a3a8 1px;
+       width:300px;
+       padding:10px;
+       margin-left:auto;
+       margin-right:auto;
+       box-shadow:#042a3550 0px 10px 10px 0px;
+    }
+    
+    .control > img, a > img {
+        margin-left:10px;
+        margin-right:10px;
+        transition-duration:0.4s;
+    }
+    
+    .control > img:hover, a > img:hover {
+        transform: scale(1.25) rotate(5deg);
+        filter: drop-shadow(0px 3px 5px #00000080);
+    }
+    
+    .banner {
+        color:black;
+        display:flex;
+        align-items: center;
+        column-gap:20px;
+        font-family: "Outfit", sans-serif;
+        justify-content:center;
+        width:100%;
+
+    }
+    
+    .banner > img {
+        filter: brightness(0%);
+    }
+</style>
+
+<body>
+<div class="banner">
+<h1>New</h1>
+<img src="https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/newsonglogo.png" width="50px">
+<h1>Song</h1>
+</div>
+<p>Audio Player</p>
+<hr>
+
+<audio src="https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/reflection-UNFINISHED-2.wav" id="player"></audio>
+
+<br>
+
+<div class="control">
+    <img onclick="document.getElementById('player').play()" src="https://cdn-icons-png.flaticon.com/128/4211/4211344.png" width="40px">
+    <img onclick="document.getElementById('player').pause()" src="https://cdn-icons-png.flaticon.com/128/2920/2920686.png" width="40px">
+
+    <a href="https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/reflection-UNFINISHED-2.wav"
+       id="down"
+       download>
+       <img src="https://cdn-icons-png.flaticon.com/128/7268/7268609.png" width="40px">
+    </a>
+</div>
+
+<h4 id="songname">Song: none</h4>
+<p id="desc"></p>
+
+<div class="songlist">
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/beatsallelse_final.mp3',
+'This is my song for Thanksgiving, Beats all else. This is the first song I\'ve made with lyrics! This song is about how great God\'s love is, even though we stumble, God\'s love forgives us.\n\nThough he may stumble, he will not fall, for the LORD upholds him with his hand. — Psalm 37:24',
+'Beats all else')">Beats all else</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/hopes_and_dreams__STEREO_.mp3',
+'One of my best songs yet, this is a cinematic hopeful music track.',
+'Hopes and Dreams')">Hopes and Dreams</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/The_Mongoose.mp3',
+'Rck Tck Tck Tck Tck',
+'The Mongoose')">The Mongoose</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Sunnyskytest.mp3',
+'This is a lofi song, like Sunny Day but better.',
+'Sunny Sky')">Sunny Sky</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Froznwater.m4a',
+'Frozen Water. Isnt that just ice',
+'Frozen Water')">Frozen Water</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Nightime.mp3',
+'Makes you think about nightime',
+'Nightime')">Nightime</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Fly%20High.mp3',
+'i DONT like trains, but I like planes',
+'Fly High')">Fly high</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Up_to_speed.mp3',
+'SPEED',
+'Up to Speed')">Up to Speed</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Rush.mp3',
+'I dunno why I called this rush this doesnt feel fast at all',
+'Rush')">Rush</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Tranquility.mp3',
+'Last song I made with AbyssBox, or any BeepBox mod',
+'Tranquility')">Tranquility</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/rescue.mp3',
+'I guess this ends my 3-part ARG, where somebody gets eaten by IT, goes down to the City of Mortem and hears everybody chant AXEI, and finally gets RESCUEd',
+'Rescue')">Rescue</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Axei.mp3',
+'Caesar7',
+'Axei')">Axei</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/It-song-pls-work.mp3',
+'If you cant tell Im running out of ideas for song names',
+'It')">It</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Sunny-1.wav',
+'Tis loFi',
+'Sunny Day')">Sunny Day</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/FAHnk.wav',
+'F-F-F-FAHHHHH',
+'Fah Phonk')">FAHnk</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/toast-x-oinon.wav',
+'Yay my first collab!',
+'Out in the Country (ft. ToastedBeanz)')">Out in The Country Mashup</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/in%20the%20country.wav',
+'Why do they call it the country? A country is well, a country, not a rural area',
+'Out in the Country')">Out in The Country</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/In%20your%20dreams.wav',
+'Ha! In your dreams',
+'In Your dreams')">In Your Dreams</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Just%20Another%20Chiptune.wav',
+'Its just another chiptune',
+'Just Another Chiptune')">Just Another Chiptune</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/reflection-UNFINISHED-2.wav',
+'Think back to the past',
+'Reflection')">Reflection</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/bloxy%20groove.wav',
+'I used to like roblox',
+'Bloxy Groove')">Bloxy Groove</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Dial.wav',
+'RING RINGG RINGGGG',
+'Dial')">Dial</button><br>
+
+<button onclick="songes(this,
+'https://file.garden/Z_Zkhskjxktxt43S/Onion%20Tunes/Audio/Energy.wav',
+'Makes you feel energetic',
+'Energy')">Energy</button>
+
+</div>
+
+<script>
+    function songes(button, a, b, c) {
+
+        document.querySelectorAll('.songlist > button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        document.getElementById('player').src = a;
+        document.getElementById('desc').innerText = b;
+        document.getElementById('songname').innerText = c;
+        document.getElementById('player').play();
+        document.getElementById('down').href = a;
+    }
+</script>
+
+</body>
+</html>
